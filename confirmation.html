@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order Confirmation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div><a href="index.html">E-Shop</a></div>
+</div>
+
+<div class="container">
+  <h2>Order Confirmed 🎉</h2>
+  <div id="orderDetails"></div>
+</div>
+
+<div class="footer">© 2026 E-Shop</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("orderDetails").innerHTML = `
+  <p><strong>Name:</strong> ${params.get("name")}</p>
+  <p><strong>Address:</strong> ${params.get("address")}</p>
+  <p><strong>City:</strong> ${params.get("city")}</p>
+  <p><strong>Pincode:</strong> ${params.get("pincode")}</p>
+  <p><strong>Payment Method:</strong> ${params.get("payment")}</p>
+  <p style="color:green; font-size:18px;">
+    Your order will be delivered within 3-5 working days.
+  </p>
+`;
+</script>
+
+</body>
+</html>

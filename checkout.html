@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div><a href="index.html">E-Shop</a></div>
+</div>
+
+<div class="container">
+  <h2>Payment Details</h2>
+
+  <form onsubmit="placeOrder(event)" class="checkout-form">
+    
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="text" id="address" placeholder="Delivery Address" required>
+    <input type="text" id="city" placeholder="City" required>
+    <input type="text" id="pincode" placeholder="Pincode" required>
+    
+    <select id="paymentMethod" required>
+      <option value="">Select Payment Method</option>
+      <option>Credit Card</option>
+      <option>Debit Card</option>
+      <option>UPI</option>
+      <option>Cash on Delivery</option>
+    </select>
+
+    <button type="submit" class="btn">Place Order</button>
+  </form>
+
+</div>
+
+<div class="footer">© 2026 E-Shop</div>
+
+<script src="js/checkout.js"></script>
+
+</body>
+</html>

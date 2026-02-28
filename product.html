@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product Details</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div><a href="index.html">E-Shop</a></div>
+  <div>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="search.html">Search</a>
+  </div>
+</div>
+
+<div class="container">
+  <div id="productDetails" class="product-detail"></div>
+</div>
+
+<div class="footer">© 2026 E-Shop</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = parseInt(params.get("id"));
+
+const product = products.find(p => p.id === id);
+
+const div = document.getElementById("productDetails");
+
+if(product){
+  div.innerHTML = `
+  <div class="detail-card">
+    
+    <div class="detail-image">
+      <img src="${product.image}">
+    </div>
+
+    <div class="detail-info">
+      <h2>${product.name}</h2>
+      <p class="price">₹${product.price}</p>
+      <p><b>Category:</b> ${product.category}</p>
+      <p>${product.desc || "No description available."}</p>
+
+      <div class="button-group">
+        <button onclick="addToCart(${product.id})" class="btn cart-btn">
+          Add to Cart
+        </button>
+
+        <button onclick="buyNow(${product.id})" class="btn buy-btn">
+          Buy Now
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+`;
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div><a href="index.html">E-Shop</a></div>
+  <div>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="search.html">Search</a>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="container">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <h3 id="totalAmount"></h3>
+    <div style="margin-top:20px;">
+  <button onclick="goToCheckout()" class="btn">
+    Proceed to Buy
+  </button>
+</div>
+  </div>
+</div>
+
+<div class="footer">© 2026 E-Shop</div>
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+
+</body>
+</html>
